@@ -30,9 +30,9 @@ function showCity(str) {
 <select name="Province" id="select_province" onchange="showCity(this.value)">
       <?php
       $servername = "localhost";
-      $username =   "hbs@localhost";
-      $password =   "hbs";
-      $dbname =     "hotel_booking";
+      $username =   "ethanell_hbs";
+      $password =   "password123";
+      $dbname =     "ethanell_sofe2800";
       $conn = new mysqli($servername, $username, $password, $dbname);
 
         // Check connection
