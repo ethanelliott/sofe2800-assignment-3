@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-<p> Select a city </p>
 <select name="city" id="select_city">
 
 <?php
@@ -36,5 +32,3 @@ mysqli_close($con);
 ?>
 
 </select>
-</body>
-</html>
