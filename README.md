@@ -6,4 +6,4 @@ The website uses PHP and MySQL to preform various querries on a given database, 
 
 The Assignment contains a sample of ESS, my personal CSS library built with SASS for this course, with the aim of helping to build pretty websites, faster. This can be compiled from base.scss.
 
-A functioning version of the website can be found at https://ethanelliott.ca/sofe2800/assignment3/
+A functioning version of the website can be found at [https://ethanelliott.ca/sofe2800/assignment3/](https://ethanelliott.ca/sofe2800/assignment3/)
