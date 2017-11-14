@@ -44,6 +44,12 @@ $page-font-weight: 500;
 	justify-content: flex-start;
 	flex-direction: row;
 }
+@mixin flex-end-row {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: row;
+}
 @mixin flex-start-column {
 	display: flex;
 	align-items: center;
@@ -144,8 +150,72 @@ p {
 	max-width: $page-width-max;
 	width:100%;
 }
+.ess-row-left {
+	@include flex-start-row;
+	max-width: $page-width-max;
+	width:100%;
+}
+.ess-row-right {
+	@include flex-end-row;
+	max-width: $page-width-max;
+	width:100%;
+}
 .wide {
 	justify-content: space-between !important;
+}
+
+.ess-price-column {
+	@include box-shadow(0, 0, 10px, 1px, rgba(0,0,0,0.5));
+	border-radius: $spacing-XS;
+	flex:1;
+	margin: $spacing-S;
+	text-align: center;
+	max-width: 400px;
+	@include transitions;
+}
+
+.ess-price-column:hover {
+	@include box-shadow(0, 0, 20px, 4px, rgba(0,0,0,0.5));
+}
+
+.ess-price-column > ul {
+	list-style-type: none;
+    @include transitions;
+}
+
+.ess-price-column-header {
+	background-color: $c-page-accent;
+    color: white;
+    font-size: $spacing-M;
+	@include spacing($spacing-M, 0);
+}
+
+.ess-price-column-image {
+	height:200px;
+	background-color: $c-page-accent-click;
+	background-repeat: no-repeat;
+    background-position: center;
+	background-size: cover;
+}
+
+.ess-price-column-price {
+	@include spacing($spacing-M, 0);
+	font-size: $spacing-M;
+	color: white;
+	background-color: $c-page-accent-click;
+}
+
+.ess-price-column-info {
+	@include spacing($spacing-S + $spacing-XS, 0);
+	font-size: $spacing-M;
+	background-color: $c-page-text-invert;
+	border-bottom: 2px solid lightgrey;
+}
+
+.ess-price-column-button {
+	@include spacing($spacing-S, 0);
+	font-size: $spacing-M;
+	background-color: lightgrey;
 }
 
 .ess-mobile-menu-button {
@@ -208,6 +278,18 @@ p {
 	border-radius: $spacing-XS;
 }
 
+input {
+	@include spacing($spacing-S, $spacing-S);
+	border: 1px solid $c-page-accent;
+	font-size: $spacing-M;
+	@include transitions;
+	border-radius: $spacing-XS;
+}
+
+input:focus {
+	@include box-shadow(0, 0, 10px, 0, $c-page-accent-click);
+}
+
 input[type="text"] {
 	@include spacing($spacing-S, $spacing-S);
 	border: 1px solid $c-page-accent;
@@ -217,6 +299,24 @@ input[type="text"] {
 }
 input[type="text"]:focus {
 	@include box-shadow(0, 0, 10px, 0, $c-page-accent-click);
+}
+
+.ess-button-disabled {
+	background: grey !important;
+	border: none !important;
+}
+.ess-button-disabled:hover {
+	background: grey !important;
+	cursor:not-allowed !important;
+}
+.ess-button-disabled:active {
+	background: grey !important;
+	cursor:not-allowed !important;
+}
+.ess-button-disabled:focus {
+	background: grey !important;
+	cursor:not-allowed !important;
+	box-shadow: none !important;
 }
 
 .ess-button, input[type="button"] {
@@ -234,6 +334,18 @@ input[type="text"]:focus {
 }
 .ess-button:active, input[type="button"]:active {
 	background: $c-page-accent-click;
+}
+
+.ess-select, select {
+	@include spacing($spacing-S, $spacing-S);
+	border: 1px solid $c-page-accent;
+	font-size: $spacing-M;
+	@include transitions;
+	border-radius: $spacing-XS;
+}
+
+.ess-select:focus, select:focus {
+	@include box-shadow(0, 0, 10px, 0, $c-page-accent-click);
 }
 
 .ess-banner {
@@ -286,6 +398,33 @@ input[type="text"]:focus {
 	@include transitions;
 }.ess-info:hover {
 	@include box-shadow(0, 0, 5px, 1px, $c-blue);
+}
+
+.ess-snack {
+	opacity: 0;
+	display: none;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: $c-page-accent;
+    color: $c-page-background;
+    text-align: center;
+    border-radius: $spacing-XXS;
+    padding: $spacing-M;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: $spacing-L;
+    font-size: $spacing-M;
+	@include box-shadow(0, 0, 10px, 2px, rgba(0,0,0,0.5));
+}
+
+.ess-hidden {
+	display: none;
+	opacity: 0;
+}
+
+h1.ess-full {
+	width:100%;
 }
 
 table {
